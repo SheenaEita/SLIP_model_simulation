@@ -1,11 +1,11 @@
 %% Illustration
-%   This code create a cubic polynomial that fit the ideal trajectory via
+%   This code creates a cubic polynomial that fit the ideal trajectory via
 %   least squares method. 
 %   The parameters will be saved and be used by a subfunction
 %   "traj_cubic_generator". The subfunction will generated the trajectory
 %   of the closed-loop model. 
 
-%   2022.12.08 Y.T. Huang
+%   2022.12.08 Sheena Eita
 
 clc;
 clear;

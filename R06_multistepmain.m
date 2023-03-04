@@ -4,7 +4,7 @@
 % "R03_ideal_traj_para_save.m" to re-fit the ideal trajectory if you want
 % to change the parameters and initial conditions.
 
-% 2022.12.20 Y.T. Huang
+% 2022.12.20 Sheena Eita
 
 clc;
 clear;

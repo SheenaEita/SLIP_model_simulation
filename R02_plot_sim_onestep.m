@@ -1,10 +1,10 @@
 %% Illustration
 %   Please re-run "R01_gen_model.m" to save parameters and needed functions
-%   if you change the parameters of the model.
-%   This code simulate ideal SLIP model in onestep. There is no
+%   if you change the parameters of the SLIP model.
+%   This code simulates ideal SLIP model in onestep. There is no
 %   non-conservation force being considered.
 
-%   2022.12.08 Y.T. Huang
+%   2022.12.08 Sheena Eita
 clc;
 clear;
 close all;
@@ -43,7 +43,7 @@ legend( 'stance phase', 'fligth phase',...
 figure()
 theta_fig = X_stance(:, 2);
 plot (t_stance, theta_fig, 'color', '#AE2012', 'LineWidth', 1);
-title( '$\theta$ Solution of Ideal SLIP (Stance Phase))',...
+title( '$\theta$ Solution of Ideal SLIP (Stance Phase)',...
     'interpreter', 'latex', 'fontsize', 12);
 xlabel( '$time [s]$', 'interpreter', 'latex', 'fontsize', 12);
 ylabel( '$\theta [rad]$', 'interpreter', 'latex', 'fontsize', 12);

@@ -1,16 +1,16 @@
 %% Illustration
-%   Generate m-files to calculate the following values in capybara model:
+%   Generate m-files to calculate the following values in SLIP model:
 %       1. M(x)
 %       2. f(x)
 %   where x = [q; q_dot] and q = [theta; phi].
 %   satisfying M(x) * x_dot = f(x)
 
-%   2022.12.08 Y.T. Huang
+%   2022.12.08 Sheena Eita
 clc;
 clear;
 close all;
 
-%%  Save parameters for the capybara model
+%%  Save parameters for the SLIP model
 m = 6;
 g = 9.81;
 k = 1800;
@@ -40,14 +40,14 @@ V = m*g*q(1)*sin(q(2)) + 0.5*k*(q(1) - l)*(q(1) - l);
 
 L = T - V;
 
-%state space : d/dt[q; q_dot] = [q_dot; f] 
+% State space : d/dt[q; q_dot] = [q_dot; f] 
 %%% find f %%%
 M = blkdiag(eye(2), jacobian(jacobian(L, q_dot), q_dot));
 f_ideal = [q_dot; jacobian(L, q)' - jacobian(jacobian(L, q_dot), q) *q_dot];
 f_disp = [q_dot; jacobian(L, q)' - jacobian(jacobian(L, q_dot), q) * q_dot - ...
    [0;abs(transpose(c)*q_dot)]];
 
-%use matlabFunction to simplify and save the equation
+% The equation can be simplified and saved using the matlabFunction command.
 syms t real
 matlabFunction(simplify(J), 'file', 'generated_function\func_J', 'vars', {q});
 matlabFunction(simplify(M), 'file', 'generated_function\func_M', 'vars', {t, x});
